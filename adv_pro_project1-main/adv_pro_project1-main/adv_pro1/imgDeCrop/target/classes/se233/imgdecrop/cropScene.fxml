@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="940.0" styleClass="hbox_pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se233.imgdecrop.controller.CropController">
+   <children>
+      <VBox prefHeight="590.0" prefWidth="226.0">
+         <children>
+            <AnchorPane prefHeight="597.0" prefWidth="226.0" styleClass="side_anchorpane" stylesheets="@style.css">
+               <children>
+                  <Pane layoutX="11.0" layoutY="25.0" prefHeight="70.0" prefWidth="202.0" styleClass="inner_pane" stylesheets="@style.css">
+                     <children>
+                        <ImageView fitHeight="70.0" fitWidth="71.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logo.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="91.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DeCrop">
+                           <font>
+                              <Font name="Cambria Bold" size="28.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <JFXButton fx:id="unSelectedTap" layoutX="12.0" layoutY="119.0" onAction="#switchToEdgeScene" prefHeight="48.0" prefWidth="202.0" styleClass="btn_unSelectedTap" stylesheets="@style.css" text="EdgeDetect" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@edgeDetection_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Yu Gothic UI Semibold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="selectedTap" layoutX="13.0" layoutY="185.0" onAction="#switchToCropScene" prefHeight="48.0" prefWidth="202.0" styleClass="btn_selectedTap" stylesheets="@style.css" text="Crop" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@crop_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Yu Gothic UI Semibold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="229.0" fitWidth="182.0" layoutX="21.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@AI_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Pane prefHeight="590.0" prefWidth="717.0">
+         <children>
+            <AnchorPane prefHeight="590.0" prefWidth="716.0">
+               <children>
+                  <JFXButton fx:id="startCrop_btn" layoutX="21.0" layoutY="531.0" onAction="#onBatchProcess" prefHeight="33.0" prefWidth="96.0" styleClass="inner_pane" stylesheets="@style.css" text="Start Crop">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="Crop_btn" layoutX="125.0" layoutY="531.0" onAction="#onConfirmCrop" styleClass="inner_pane" stylesheets="@style.css" text="Cropping">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="14.0" layoutY="490.0" text="Crop Images">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="clear_btn" layoutX="328.0" layoutY="497.0" onAction="#clear" prefHeight="34.0" prefWidth="59.0" styleClass="inner_pane" stylesheets="@style.css" text="Clear">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="next_btn" layoutX="396.0" layoutY="499.0" onAction="#showNextImage" styleClass="btn_shiftImg" stylesheets="@style.css" text="--&gt;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="back_btn" layoutX="281.0" layoutY="499.0" onAction="#showBackImage" styleClass="btn_shiftImg" stylesheets="@style.css" text="&lt;--">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <AnchorPane fx:id="rootPane" layoutX="483.0" layoutY="548.0" prefHeight="34.0" prefWidth="225.0" />
+                  <ScrollPane fx:id="imageScrollPane" layoutX="21.0" layoutY="22.0" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" pannable="true" prefHeight="461.0" prefWidth="675.0" styleClass="ImgPane" stylesheets="@../../../../../../../../../../Desktop/adv_pro_project1-main/adv_pro1/imgDeCrop/src/main/resources/se233/imgdecrop/style.css">
+                     <content>
+                        <BorderPane fx:id="imagePane" prefHeight="444.0" prefWidth="656.0">
+                           <center>
+                              <ImageView fx:id="inputImgView" fitHeight="403.0" fitWidth="631.0" preserveRatio="true" />
+                           </center>
+                        </BorderPane>
+                     </content>
+                  </ScrollPane>
+                  <BorderPane fx:id="imagePane1" layoutX="10.0" layoutY="10.0">
+                     <center>
+                        <ImageView fx:id="inputImgView1" fitHeight="257.5" fitWidth="225" preserveRatio="true" />
+                     </center>
+                  </BorderPane>
+                  <JFXButton fx:id="Input_btn" layoutX="580.0" layoutY="492.0" onMouseClicked="#handleClickToUpload" styleClass="btn_unSelectedAlgo" stylesheets="@../../../../../../../../../../Desktop/adv_pro_project1-main/adv_pro1/imgDeCrop/src/main/resources/se233/imgdecrop/style.css" text="Choose File">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@input.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</HBox>

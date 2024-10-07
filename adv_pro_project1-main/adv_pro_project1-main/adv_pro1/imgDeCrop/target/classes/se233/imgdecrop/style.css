@@ -1,0 +1,106 @@
+.side_anchorpane{
+    -fx-background-color:#353A56;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+}
+.inner_pane{
+    -fx-background-color:#748CF1;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+}
+.hbox_pane{
+    -fx-background-color:#d1d1d2;
+}
+
+.btn_selectedTap{
+    -fx-background-color:#141313;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-color:#141313;
+}
+
+.btn_unSelectedTap{
+    -fx-background-color:#353A56;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-color:#141313;
+}
+
+.ImgPane{
+    -fx-background-color: #ffffff;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-color:#151515;
+}
+
+.btn_selectedAlgo{
+    -fx-background-color:#141313;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-color:#141313;
+}
+
+.btn_unSelectedAlgo{
+    -fx-background-color:#FFFFFF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-color:#141313;
+}
+
+.btn_shiftImg{
+    -fx-background-color:#FFFFFF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-color:#141313;
+}
+
+.btn_Clear{
+    -fx-background-color:#FFFFFF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 300px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-color:#141313;
+}
+
+.strengthSlider .track{
+    -fx-pref-height: 7;
+    -fx-background-color: linear-gradient(to right, cornflowerblue, darkslateblue);
+}
+
+.strengthSlider .colored-track{
+    -fx-background-color: transparent;
+}
+
+.strengthSlider .thumb{
+    -fx-background-color: #748CF1;
+}
+
+.opacitySlider .track{
+    -fx-pref-height: 7;
+    -fx-background-color: linear-gradient(to right, cornflowerblue, darkslateblue);
+}
+
+.opacitySlider .colored-track{
+    -fx-background-color: transparent;
+}
+
+.opacitySlider .thumb{
+    -fx-background-color: #748CF1;
+}
+
+
+

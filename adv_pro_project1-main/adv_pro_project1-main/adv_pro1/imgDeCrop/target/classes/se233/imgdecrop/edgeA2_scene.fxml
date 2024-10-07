@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="940.0" styleClass="hbox_pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se233.imgdecrop.controller.SceneController">
+    <children>
+        <VBox prefHeight="590.0" prefWidth="226.0">
+            <children>
+                <AnchorPane prefHeight="597.0" prefWidth="226.0" styleClass="side_anchorpane" stylesheets="@style.css">
+                    <children>
+                        <Pane layoutX="11.0" layoutY="25.0" prefHeight="70.0" prefWidth="202.0" styleClass="inner_pane" stylesheets="@style.css">
+                            <children>
+                                <ImageView fitHeight="70.0" fitWidth="71.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@logo.png" />
+                                    </image>
+                                </ImageView>
+                                <Text layoutX="91.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DeCrop">
+                                    <font>
+                                        <Font name="Cambria Bold" size="28.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="selectedTap" layoutX="12.0" layoutY="119.0" prefHeight="48.0" prefWidth="202.0" styleClass="btn_selectedTap" stylesheets="@style.css" text="EdgeDetect" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@edgeDetection_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Yu Gothic UI Semibold" size="16.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="unSelectedTap" layoutX="13.0" layoutY="185.0" onAction="#switchToCropScene" prefHeight="48.0" prefWidth="202.0" styleClass="btn_unSelectedTap" stylesheets="@style.css" text="Crop" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@crop_icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Yu Gothic UI Semibold" size="16.0" />
+                            </font>
+                        </JFXButton>
+                  <ImageView fitHeight="229.0" fitWidth="182.0" layoutX="21.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@AI_icon.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="590.0" prefWidth="717.0">
+            <children>
+                <AnchorPane prefHeight="590.0" prefWidth="716.0">
+                    <children>
+                        <AnchorPane layoutX="402.0" layoutY="18.0" prefHeight="519.0" prefWidth="300.0">
+                            <children>
+                                <AnchorPane fx:id="dropbox" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" onMouseClicked="#handleClickToUpload" prefHeight="250.0" prefWidth="300.0" styleClass="ImgPane" stylesheets="@style.css">
+                           <children>
+                              <ImageView fx:id="inputImgView" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                           </children></AnchorPane>
+                                <AnchorPane layoutY="270.0" prefHeight="250.0" prefWidth="300.0" styleClass="ImgPane" stylesheets="@style.css">
+                           <children>
+                              <ImageView fx:id="resultImgView" fitHeight="250.0" fitWidth="302.0" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" onMouseClicked="#handleClickToUpload" pickOnBounds="true" preserveRatio="true" />
+                           </children></AnchorPane>
+                                <Label layoutY="252.0" text="Result">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <Label layoutX="402.0" layoutY="-1.0" text="Input Image">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="19.0" text="Algorithm">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="Balgo1" layoutX="27.0" layoutY="54.0" onAction="#switchToEdgeA1Scene" prefHeight="33.0" prefWidth="96.0" styleClass="btn_unSelectedAlgo" stylesheets="@style.css" text="Gaussian">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton layoutX="145.0" layoutY="54.0" prefHeight="33.0" prefWidth="96.0" styleClass="btn_selectedTap" stylesheets="@style.css" text="Laplacian" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="Balgo3" layoutX="263.0" layoutY="54.0" onAction="#switchToEdgeA3Scene" prefHeight="34.0" prefWidth="106.0" styleClass="btn_unSelectedAlgo" stylesheets="@style.css" text="RobertsCross">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="clear_btn" layoutX="522.0" layoutY="548.0" onAction="#clear" prefHeight="34.0" prefWidth="59.0" styleClass="inner_pane" stylesheets="@style.css" text="Clear">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="next_btn" layoutX="593.0" layoutY="551.0" onAction="#showNextImage" styleClass="btn_shiftImg" stylesheets="@style.css" text="--&gt;">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="back_btn" layoutX="472.0" layoutY="551.0" onAction="#showBackImage" styleClass="btn_shiftImg" stylesheets="@style.css" text="&lt;--">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="detectEdge_btn" layoutX="20.0" layoutY="202.0" onAction="#DetectEdges" styleClass="inner_pane" stylesheets="@style.css" text="DetectEdge">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="save_btn" layoutX="143.0" layoutY="202.0" onAction="#onSaveImage" styleClass="inner_pane" stylesheets="@style.css" text="SaveImage">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+            </children>
+        </Pane>
+    </children>
+</HBox>
